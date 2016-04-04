@@ -10,13 +10,19 @@ layout: none
 		<language>en-us</language>
 		{% for item in site.data.feed-entries limit:50 %}
 
+			{% assign datePublished = '' %}
 			{% assign d = item.pubDate | split: '/' %}
-			{{ d[0] }} -- {{ d[1] }} -- {{ d[2] }}
+			{% assign datePublished = datePublished | append: d[1] %}
+			{% assign datePublished = datePublished | append: '/' %}
+			{% assign datePublished = datePublished | append: d[0] %}
+			{% assign datePublished = datePublished | append: '/' %}
+			{% assign datePublished = datePublished | append: d[2] %}
+			{{ datePublished }}
 
 				{% if item.title != null %}<item>
 				<title>{{ item.title }}</title>
 				<description></description>
-				<pubDate>{{ item.pubDate | date_to_string }}</pubDate>
+				<pubDate>{{ datePublished | date_to_string }}</pubDate>
 				<link>{{ item.link }}}</link>
 				<guid isPermaLink="true">{{ item.link }}</guid>
 			</item>{% endif %}{% endfor %}
