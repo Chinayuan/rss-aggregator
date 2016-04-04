@@ -9,7 +9,6 @@ layout: none
 		<link>{{ site.url }}</link>
 		<language>en-us</language>
 		{% for item in site.data.feed-entries limit:50 %}
-
 			{% assign datePublished = '' %}
 			{% assign d = item.pubDate | split: '/' %}
 			{% assign datePublished = datePublished | append: d[1] %}
@@ -17,8 +16,6 @@ layout: none
 			{% assign datePublished = datePublished | append: d[0] %}
 			{% assign datePublished = datePublished | append: '/' %}
 			{% assign datePublished = datePublished | append: d[2] %}
-			{{ datePublished }}
-
 				{% if item.title != null %}<item>
 				<title>{{ item.title }}</title>
 				<description></description>
