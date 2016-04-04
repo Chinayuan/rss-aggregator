@@ -8,7 +8,7 @@ layout: none
 		<description>{{ site.project_summary }}</description>
 		<link>{{ site.url }}</link>
 		<language>en-us</language>
-		<atom:link href="{{ site.url }}/aggregate.xml" rel="self" type="application/rss+xml" /
+		<atom:link href="{{ site.url }}aggregate.xml" rel="self" type="application/rss+xml" />
 		{% for item in site.data.feed-entries limit:50 %}
 			{% assign datePublished = '' %}
 			{% assign d = item.pubDate | split: '/' %}
