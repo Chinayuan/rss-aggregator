@@ -12,7 +12,7 @@ layout: none
 				{% if item.title != null %}<item>
 				<title>{{ item.title }}</title>
 				<description></description>
-				<pubDate>{{ item.pubDatee | date_to_string }}</pubDate>
+				<pubDate>{{ item.pubDate | date_to_string }}</pubDate>
 				<link>{{ item.link }}}</link>
 				<guid isPermaLink="true">{{ item.link }}</guid>
 			</item>{% endif %}{% endfor %}
