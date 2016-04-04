@@ -15,12 +15,12 @@ layout: none
 			{% assign datePublished = datePublished | append: '/' %}
 			{% assign datePublished = datePublished | append: d[0] %}
 			{% assign datePublished = datePublished | append: '/' %}
-			{% assign datePublished = datePublished | append: d[2] %}
+			{% assign datePublished = datePublished | append: d[2] %}			
 			{{ assign itemLink = item.link}}
 				{% if item.title != null %}<item>
 				<title>{{ item.title }}</title>
 				<description></description>
-				<pubDate>{{ datePublished | date_to_string }}</pubDate>
+				<pubDate>{{ datePublished | date_to_rfc822 }}</pubDate>
 				<link>{{ item.link }}</link>
 				<guid isPermaLink="true">{{ item.link }}</guid>
 			</item>{% endif %}{% endfor %}
